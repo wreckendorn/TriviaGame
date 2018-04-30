@@ -1,3 +1,27 @@
+<!-- INSTRUCTIONS ===============
+* You'll create a trivia form with multiple choice or true/false options (your choice).
+
+* The player will have a limited amount of time to finish the quiz. 
+
+* The game ends when the time runs out. The page will reveal the number of questions that players answer correctly and incorrectly.
+
+* Don't let the player pick more than one answer per question.
+
+* Don't forget to include a countdown timer. 
+
+========= PSEUDOCODE ======= 
+- start button that takes up most of the screen and disappears after being clicked on - DONE √
+- create 10 trivia questions with 4 possible answers for each.  probably use an array of objects for this. - DONE √
+- create array that holds an AQ object.  Each object will have a question, four answers, and a correct answer - DONE √
+- build a timer function.  condition that if timer runs out it fires the game over function - DONE √
+- gameover function that displays each array's question and correct answer.  also displays scorefunction
+condition that moves selection to current radio button event
+check answer function that looks for a match with the correct answer radio button and triggers score function
+score function
+display Q&A dynamically using jQuery and clone()
+display scores - Correct Answers, Incorrect Answers, Unanswered.  removes Q&A from the screen and replaces it with these scores -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +39,65 @@
     <title>Trivia Game</title>
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <p id="clock"></p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <button type="button" class="btn btn-success btn-lg" id="startButton">Start</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+
+        <form>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-12 col-form-label text-center" id="questionHere"></label>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="form-check col-6">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label text-center" for="exampleRadios1" id="answerOne"></label>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="form-check col-6">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label text-center" for="exampleRadios1" id="answerTwo"></label>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="form-check col-6">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label text-center" for="exampleRadios1" id="answerThree"></label>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="form-check col-6">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label text-center" for="exampleRadios1" id="answerFour"></label>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </form>
+    </div>
     <!-- link to my javascript file -->
 <script src="assets/javascript/app.js"></script>
 </body>
