@@ -63,7 +63,6 @@ function finalScreen() {
     $(".container").append("<div class='row'><div class='col-3'></div><div class='col-6'><button id ='startAgain'type='button' class='btn btn-primary btn-block'>Start Over</button></div><div class='col-3'></div></div>");
     $(".container").append("<div class='row'><div class='col-12'><img src='./assets/images/chihuahuaBackground2.jpg'></div></div>");
 
-    
     $("#startAgain").on("click",(function() {
         console.log("Game is starting");
         answeredCorrectScore = 0;
@@ -88,7 +87,7 @@ function displayQuestion()
 
         $(".container").empty();
         // creates div with id=questionHere that will hold the question
-        var questionDiv = $("<div class='row'><div class = 'col-3'></div><div class='col-6'id='questionHere'></div><div class = 'col-3'></div></div><form id='radioBox'>");
+        var questionDiv = $("<div class='row' id='blackRow'><div class ='col-1'></div><div class='col-10'id='questionHere'></div><div class = 'col-1'></div></div><form id='radioBox'>");
         // creates form div which creates the radio button and sets a value id of "option1"
         var answerDivA = $("<p><input type='radio' name='possibleAnswers' value='option1' class='radios'/></p><p class='radioAnswer'id='answerOne'></p>");
         var answerDivB = $("<p><input type='radio' name='possibleAnswers' value='option2' class='radios'/></p><p class='radioAnswer'id='answerTwo'></p>");
@@ -114,7 +113,7 @@ function displayQuestion()
                     console.log(userAnswer);
                     $(".container").empty();
                     endTime();
-                    $(".container").append("<div class='card' style='width: 18rem;'><img 'card-img-top' src = " + qaArray[i].image + " alt='Card image cap'>");
+                    $(".container").append("<div id='imageDiv'><img src = " + qaArray[i].image + ">");
 //if the user guesses correctly, increase the answeredCorrect score and display "Correct!" along with a gif
                     if (userAnswer === qaArray[i].co) {
                         answeredCorrectScore++;
@@ -130,9 +129,6 @@ function displayQuestion()
                     $(".container").append("<h2>Nope!  The correct answer is " + qaArray[i].ca + "</h2>");
                     different();
                     }
-                    
-                        
-            
             });
     }
     else {
@@ -154,8 +150,6 @@ $(document).ready(function() {
         $("body").prepend("<div class='jumbotron'><h1 class='display-4' id= 'clock'></h1></div>");
         $(".container").css({"margin-top": "0", "padding": "0"});
         displayQuestion();
-        
-        
     }));
 
 });

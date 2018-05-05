@@ -40,3 +40,15 @@ img {
 #option1 {
     padding-bottom: 10px;
 }
+#blackRow {
+    border: black;
+    border-style: solid;
+    border-width: thin;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+#imageDiv {
+    clear: both;
+    margin: 0 auto;
+}
