@@ -34,38 +34,72 @@ display scores - Correct Answers, Incorrect Answers, Unanswered.  removes Q&A fr
   
    <!-- bootstrap CSS, Google Fonts, and my CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
     <title>Trivia Game</title>
     <style>
         .container {
             width: 800px;
-            height: 600px;
+            height: 800px;
             margin-top: 200px;
-            background-color: grey;
+            background-color: white;
         }
+
+        img {
+            margin: auto√;
+        }
+
 
         button {
             background-color: black;
             color:white;
         }
 
+        body {
+            background-image: url("assets/images/chihuahuaBackground.jpg");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            font-family: 'Gothic A1', sans-serif;
+        }
+
+        h1,h2 {
+            text-align:center;
+        }
+        .radios {
+            float:left;
+            clear:none;
+        }
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .radioAnswer {
+            padding-left:30px;
+        }
+        #option1 {
+            padding-bottom: 10px;
+        }
+     
+
     </style>
 </head>
 
 <body>
-        <h1 id="clock"></h1>
     <div class="container">
 
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <button type="button" class="btn btn-success btn-lg" id="startButton">Start</button>
+                <button type="button" class="btn btn-primary btn-block" id="startButton">Start</button>
             </div>
             <div class="col-3"></div>
         </div>
 
     </div>
+    <audio autoplay>
+        <source src= "assets/sounds/backgroundAudio.mp3" type="audio/mpeg">
+      </audio>
     <!-- link to my javascript file -->
 <script src="assets/javascript/app.js"></script>
 </body>

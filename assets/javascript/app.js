@@ -60,7 +60,10 @@ function finalScreen() {
     $(".container").append("<h2>Correct Answers: " + answeredCorrectScore + "</h2>");
     $(".container").append("<h2>Incorrect Answers: " + answeredWrongScore + "</h2>");
     $(".container").append("<h2>Questions not answered: " + notAnsweredScore + "</h2>");
-    $(".container").append("<button id ='startAgain'>Start Over</button>");
+    $(".container").append("<div class='row'><div class='col-3'></div><div class='col-6'><button id ='startAgain'type='button' class='btn btn-primary btn-block'>Start Over</button></div><div class='col-3'></div></div>");
+    $(".container").append("<div class='row'><div class='col-12'><img src='./assets/images/chihuahuaBackground2.jpg'></div></div>");
+
+    
     $("#startAgain").on("click",(function() {
         console.log("Game is starting");
         answeredCorrectScore = 0;
@@ -84,13 +87,13 @@ function displayQuestion()
 
         $(".container").empty();
         // creates div with id=questionHere that will hold the question
-        var questionDiv = $("<div id='questionHere'></div><form id='radioBox'>");
+        var questionDiv = $("<div class='row'><div class = 'col-3'></div><div class='col-6'id='questionHere'></div><div class = 'col-3'></div></div><form id='radioBox'>");
         // creates form div which creates the radio button and sets a value id of "option1"
-        var answerDivA = $("<p><input type='radio' id='answerOneEvent' name='possibleAnswers' value='option1'/></p><p id='answerOne'></p>");
-        var answerDivB = $("<p><input type='radio' id='answerTwoEvent' name='possibleAnswers' value='option2'/></p><p id='answerTwo'></p>");
-        var answerDivC = $("<p><input type='radio' id='answerThreeEvent' name='possibleAnswers' value='option3'/></p><p id='answerThree'></p>");
-        var answerDivD = $("<p><input type='radio' id='answerFourEvent' name='possibleAnswers' value='option4' checked/></p><p id='answerFour'</p></form>");
-        var submit = $("<button>SUBMIT</button>");
+        var answerDivA = $("<p><input type='radio' name='possibleAnswers' value='option1' class='radios'/></p><p class='radioAnswer'id='answerOne'></p>");
+        var answerDivB = $("<p><input type='radio' name='possibleAnswers' value='option2' class='radios'/></p><p class='radioAnswer'id='answerTwo'></p>");
+        var answerDivC = $("<p><input type='radio' name='possibleAnswers' value='option3' class='radios'/></p><p class='radioAnswer'id='answerThree'></p>");
+        var answerDivD = $("<p><input type='radio' name='possibleAnswers' value='option4' class='radios' checked/></p><p class='radioAnswer'id='answerFour'</p></form>");
+        var submit = $("<div class='row'><div class='col-3'></div><div class='col-6'><button type='button' class='btn btn-primary btn-block'>SUBMIT</button></div><div class='col-3'></div></div>");
 
         //adds the divs we created above to the container div
         $(".container").append(questionDiv, answerDivA, answerDivB, answerDivC, answerDivD, submit);
@@ -110,11 +113,12 @@ function displayQuestion()
                     console.log(userAnswer);
                     $(".container").empty();
                     endTime();
-                    $(".container").append("<img src = " + qaArray[i].image + ">");
+                    $(".container").append("<div class='card' style='width: 18rem;'><img 'card-img-top' src = " + qaArray[i].image + " alt='Card image cap'>");
+
                     if (userAnswer === qaArray[i].co) {
                         answeredCorrectScore++;
                         console.log(answeredCorrectScore);
-                        $(".container").append("<h2>You nailed it!</h2>");
+                        $(".container").append("<h2>Correct!</h2>");
                         different();
                     } 
                     else {
@@ -144,6 +148,9 @@ $(document).ready(function() {
     $("#startButton").on("click",(function() {
         $("#startButton").remove();
         console.log("Game is starting");
+        $("body").css('background-image', 'none');
+        $("body").prepend("<div class='jumbotron'><h1 class='display-4' id= 'clock'></h1></div>");
+        $(".container").css({"margin-top": "0", "padding": "0"});
         displayQuestion();
         
         
