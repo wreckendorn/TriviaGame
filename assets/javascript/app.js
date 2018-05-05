@@ -26,10 +26,10 @@ var answeredCorrectScore = 0;
 var notAnsweredScore = 0;
 //questions answered wrong score
 var answeredWrongScore = 0;
-
+//this varible is the iterator for looping through the array
 var i = 0;
 
-// when timer is done, this function is triggered.
+// when timer is done, this function is triggered to clear out the timer
 function endTime() {
     console.log("Time's up");
     clearInterval(intervalId);
@@ -54,7 +54,7 @@ function decrement() {
         different();
     }
 }
-
+// this function is the last one to run.  it display the three different scores and a start button to start over.  it also initializes the scores once the start button has been clicked
 function finalScreen() {
     $(".container").empty();
     $(".container").append("<h2>Correct Answers: " + answeredCorrectScore + "</h2>");
@@ -77,6 +77,7 @@ function finalScreen() {
 function different() {
     setTimeout(displayQuestion, 3000);
 }
+// this function creates the HTML for the Q&A, but first empties out the container.  after displaying all of the questions and answers, it runs the condition to see if the answer is correctl
 function displayQuestion() 
 {
     i++;
@@ -114,13 +115,14 @@ function displayQuestion()
                     $(".container").empty();
                     endTime();
                     $(".container").append("<div class='card' style='width: 18rem;'><img 'card-img-top' src = " + qaArray[i].image + " alt='Card image cap'>");
-
+//if the user guesses correctly, increase the answeredCorrect score and display "Correct!" along with a gif
                     if (userAnswer === qaArray[i].co) {
                         answeredCorrectScore++;
                         console.log(answeredCorrectScore);
                         $(".container").append("<h2>Correct!</h2>");
                         different();
                     } 
+//if the user guesses incorrectly, the answeredWrongScore increases and displays" Note!" along with the correct answer and a gif"
                     else {
                     answeredWrongScore++;
                     console.log(answeredWrongScore);

@@ -1,0 +1,42 @@
+.container {
+    width: 800px;
+    height: 800px;
+    margin-top: 200px;
+    background-color: white;
+}
+
+img {
+    margin: auto√;
+}
+
+
+button {
+    background-color: black;
+    color:white;
+}
+
+body {
+    background-image: url("../images/chihuahuaBackground.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+h1,h2 {
+    text-align:center;
+}
+.radios {
+    float:left;
+    clear:none;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.radioAnswer {
+    padding-left:30px;
+}
+#option1 {
+    padding-bottom: 10px;
+}
