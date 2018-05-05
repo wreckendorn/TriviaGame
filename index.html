@@ -37,16 +37,25 @@ display scores - Correct Answers, Incorrect Answers, Unanswered.  removes Q&A fr
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
     <title>Trivia Game</title>
+    <style>
+        .container {
+            width: 800px;
+            height: 600px;
+            margin-top: 200px;
+            background-color: grey;
+        }
+
+        button {
+            background-color: black;
+            color:white;
+        }
+
+    </style>
 </head>
+
 <body>
+        <h1 id="clock"></h1>
     <div class="container">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <p id="clock"></p>
-            </div>
-            <div class="col-3"></div>
-        </div>
 
         <div class="row">
             <div class="col-3"></div>
@@ -56,47 +65,6 @@ display scores - Correct Answers, Incorrect Answers, Unanswered.  removes Q&A fr
             <div class="col-3"></div>
         </div>
 
-        <form>
-            <div class="form-group row">
-                <label for="staticEmail" class="col-12 col-form-label text-center" id="questionHere"></label>
-            </div>
-
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label text-center" for="exampleRadios1" id="answerOne"></label>
-                </div>
-                <div class="col-3"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label text-center" for="exampleRadios1" id="answerTwo"></label>
-                </div>
-                <div class="col-3"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label text-center" for="exampleRadios1" id="answerThree"></label>
-                </div>
-                <div class="col-3"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label text-center" for="exampleRadios1" id="answerFour"></label>
-                </div>
-                <div class="col-3"></div>
-            </div>
-        </form>
     </div>
     <!-- link to my javascript file -->
 <script src="assets/javascript/app.js"></script>
