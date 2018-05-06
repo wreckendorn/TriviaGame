@@ -25,15 +25,15 @@ body {
 h1,h2 {
     text-align:center;
 }
+
+h2 {
+    padding-top: 30px;
+}
 .radios {
     float:left;
     clear:none;
 }
 
-img {
-    margin-left: auto;
-    margin-right: auto;
-}
 .radioAnswer {
     padding-left:30px;
 }
@@ -41,14 +41,6 @@ img {
     padding-bottom: 10px;
 }
 #blackRow {
-    border: black;
-    border-style: solid;
-    border-width: thin;
     margin-bottom: 40px;
     padding: 20px;
-}
-
-#imageDiv {
-    clear: both;
-    margin: 0 auto;
 }

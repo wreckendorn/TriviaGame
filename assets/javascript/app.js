@@ -49,19 +49,20 @@ function decrement() {
         notAnsweredScore++;
         console.log(notAnsweredScore++);
         $(".container").empty();
-        $(".container").append("<img src = " + qaArray[i].image + ">");
-        $(".container").append("<h2>Time's Up!  The correct answer is " + qaArray[i].ca + "</h2>");
+        $(".container").html("<div class = 'row'><div class ='col-12 text-center' id ='imageDiv'><img src = " + qaArray[i].image + " class = 'text-center'></div></div>");
+        $(".container").append("<h2 class='alert bg-primary text-white mt-4' role='alert'>Time's Up!  The correct answer is " + qaArray[i].ca + "</h2>");
         different();
     }
 }
 // this function is the last one to run.  it display the three different scores and a start button to start over.  it also initializes the scores once the start button has been clicked
 function finalScreen() {
     $(".container").empty();
-    $(".container").append("<h2>Correct Answers: " + answeredCorrectScore + "</h2>");
-    $(".container").append("<h2>Incorrect Answers: " + answeredWrongScore + "</h2>");
-    $(".container").append("<h2>Questions not answered: " + notAnsweredScore + "</h2>");
-    $(".container").append("<div class='row'><div class='col-3'></div><div class='col-6'><button id ='startAgain'type='button' class='btn btn-primary btn-block'>Start Over</button></div><div class='col-3'></div></div>");
-    $(".container").append("<div class='row'><div class='col-12'><img src='./assets/images/chihuahuaBackground2.jpg'></div></div>");
+    $(".container").append("<h2 class='alert bg-secondary text-white mt-4' role='alert'>Correct Answers: " + answeredCorrectScore + "</h2>");
+    $(".container").append("<h2 class='alert bg-secondary text-white mt-4' role='alert'>Incorrect Answers: " + answeredWrongScore + "</h2>");
+    $(".container").append("<h2 class='alert bg-secondary text-white mt-4' role='alert'>Questions not answered: " + notAnsweredScore + "</h2>");
+    $(".container").append("<div class='row mt-4'><div class='col-12 text-center'><img src='./assets/images/chihuahuaBackground2.jpg' class = 'text-center'></div></div>");
+    $(".container").append("<div class='row mt-4'><div class='col-2'></div><div class='col-8'><button id ='startAgain'type='button' class='btn btn-primary btn-block'>Start Over</button></div><div class='col-2'></div></div>");
+   
 
     $("#startAgain").on("click",(function() {
         console.log("Game is starting");
@@ -87,7 +88,7 @@ function displayQuestion()
 
         $(".container").empty();
         // creates div with id=questionHere that will hold the question
-        var questionDiv = $("<div class='row' id='blackRow'><div class ='col-1'></div><div class='col-10'id='questionHere'></div><div class = 'col-1'></div></div><form id='radioBox'>");
+        var questionDiv = $("<div class = 'row border border-primary' id = 'blackRow'><div class ='col-12 text-center' id ='questionHere'></div></div><form id='radioBox'>");
         // creates form div which creates the radio button and sets a value id of "option1"
         var answerDivA = $("<p><input type='radio' name='possibleAnswers' value='option1' class='radios'/></p><p class='radioAnswer'id='answerOne'></p>");
         var answerDivB = $("<p><input type='radio' name='possibleAnswers' value='option2' class='radios'/></p><p class='radioAnswer'id='answerTwo'></p>");
@@ -113,12 +114,12 @@ function displayQuestion()
                     console.log(userAnswer);
                     $(".container").empty();
                     endTime();
-                    $(".container").append("<div id='imageDiv'><img src = " + qaArray[i].image + ">");
+                    $(".container").html("<div class = 'row'><div class ='col-12 text-center' id ='imageDiv'><img src = " + qaArray[i].image + " class = 'text-center'></div></div>");
 //if the user guesses correctly, increase the answeredCorrect score and display "Correct!" along with a gif
                     if (userAnswer === qaArray[i].co) {
                         answeredCorrectScore++;
                         console.log(answeredCorrectScore);
-                        $(".container").append("<h2>Correct!</h2>");
+                        $(".container").append("<h2 class='alert bg-primary text-white mt-4' role='alert'>Correct!</h2>");
                         different();
                     } 
 //if the user guesses incorrectly, the answeredWrongScore increases and displays" Note!" along with the correct answer and a gif"
@@ -126,7 +127,7 @@ function displayQuestion()
                     answeredWrongScore++;
                     console.log(answeredWrongScore);
                     endTime();
-                    $(".container").append("<h2>Nope!  The correct answer is " + qaArray[i].ca + "</h2>");
+                    $(".container").append("<h2 class='alert bg-primary text-white mt-4' role='alert'>Nope!  The correct answer is " + qaArray[i].ca + "</h2>");
                     different();
                     }
             });
@@ -147,7 +148,7 @@ $(document).ready(function() {
         $("#startButton").remove();
         console.log("Game is starting");
         $("body").css('background-image', 'none');
-        $("body").prepend("<div class='jumbotron'><h1 class='display-4' id= 'clock'></h1></div>");
+        $("body").prepend("<div class='jumbotron bg-secondary text-white'><h1 class='display-4' id= 'clock'></h1></div>");
         $(".container").css({"margin-top": "0", "padding": "0"});
         displayQuestion();
     }));
