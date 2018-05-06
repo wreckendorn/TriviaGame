@@ -88,7 +88,7 @@ function displayQuestion()
 
         $(".container").empty();
         // creates div with id=questionHere that will hold the question
-        var questionDiv = $("<div class = 'row border border-primary' id = 'blackRow'><div class ='col-12 text-center' id ='questionHere'></div></div><form id='radioBox'>");
+        var questionDiv = $("<div class = 'row border border-primary mt-6' id = 'blackRow'><div class ='col-12 text-center' id ='questionHere'></div></div><form id='radioBox'>");
         // creates form div which creates the radio button and sets a value id of "option1"
         var answerDivA = $("<p><input type='radio' name='possibleAnswers' value='option1' class='radios'/></p><p class='radioAnswer'id='answerOne'></p>");
         var answerDivB = $("<p><input type='radio' name='possibleAnswers' value='option2' class='radios'/></p><p class='radioAnswer'id='answerTwo'></p>");
